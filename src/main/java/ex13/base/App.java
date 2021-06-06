@@ -42,6 +42,24 @@ public class App {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        
+        System.out.println("What is the principal amount?");
+        int principal = in.nextInt();
+
+        System.out.println("What is the rate?");
+        double rate = (in.nextDouble())/100;
+
+        System.out.println("What is the the number of years?");
+        int years = in.nextInt();
+
+        System.out.println("What is the the number of time the interest is compounded per year?");
+        int comp = in.nextInt();
+
+        String percent = "%"; //literally having to create this variable because i cant print % within a printf :(
+
+        double value = principal * (Math.pow((1 + rate/comp), (comp * years)));
+
+        System.out.printf("$%d invested at %.2f%s for %d years compounded %d times per year is $%.2f."
+                , principal, (rate * 100), percent, years, comp, value);
+
     }
 }
